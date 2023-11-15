@@ -1,5 +1,6 @@
 class Board:
     def __init__(self):
+    # Initialize the board with empty cells
         self.__rows = [
             [None, None, None],
             [None, None, None],
@@ -8,6 +9,7 @@ class Board:
 
 
     def __str__(self):
+    # Generate a string representation of the board for display
         s = '-------\n'
         for row in self.__rows:
             for cell in row:
@@ -21,10 +23,12 @@ class Board:
 
 
     def get(self, x, y):
+    # Get the value at a specific position on the board
         return self.__rows[y][x]
 
 
     def set(self, x, y, value):
+    # Set a value at a specific position on the board
         if x >= len(self.__rows[0]) or y >= len(self.__rows):
             print(f"out of bounds, try again\n")
             raise ValueError
